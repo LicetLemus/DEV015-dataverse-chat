@@ -60,7 +60,7 @@ export function Home() {
   }
 
   /* Usamos setTimeout para esperar a que el DOM se actualice y poder seleccionar los elementos del DOM */
-  setTimeout(() => {
+  const getElementsAndEvents = () => {
     const filterSelectType = document.querySelector("#type-select");
     const filterSelectApplication = document.querySelector(
       "#applicationField-select"
@@ -105,10 +105,10 @@ export function Home() {
       event.preventDefault();
       renderMetrics(data, rootElement);
     });
-  }, 0);
+  }
 
   loadStylesheet("./styles/home.css");
   removeStylesheet(["./styles/home.css", "./styles/style.css"]);
 
-  return cards(data);
+  return { componentHTML: cards(data), getElementsAndEvents };
 }

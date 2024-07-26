@@ -23,8 +23,9 @@ export const renderView = (pathname, props = {}) => {
     return;
   }
 
-  const componentHTML = viewFunction(props);
+  const { componentHTML, getElementsAndEvents } = viewFunction(props);
   ROOT.append(componentHTML);
+  getElementsAndEvents();
 };
 
 export const navigateTo = (pathname, props = {}) => {
