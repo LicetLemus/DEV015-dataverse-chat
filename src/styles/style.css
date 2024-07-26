@@ -54,6 +54,10 @@ body {
   font-family: var(--ff-sans);
 }
 
+button:active {
+  transform: translateY(2px);
+}
+
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .header__select {
     display: flex;

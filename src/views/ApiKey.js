@@ -1,3 +1,4 @@
+import { navigateTo } from "../router.js";
 import { loadStylesheet, removeStylesheet } from "../lib/styleUtils.js";
 import { setApiKey } from "../lib/apiKey.js";
 
@@ -38,10 +39,20 @@ export function ApiKey() {
   const getElementsAndEvents = () => {    
     const apiKey = document.getElementById("apikey");
     const buttonSave = document.getElementById("button__save");
+    const buttonBack = document.getElementById("container__back");
+    const buttonClear = document.getElementById("button__clear");
 
     buttonSave.addEventListener("click", () => {
       const apiKeyValue = apiKey.value;
       setApiKey(apiKeyValue);
+    });
+
+    buttonBack.addEventListener("click", () => {
+      navigateTo("/");
+    });
+
+    buttonClear.addEventListener("click", () => {
+      apiKey.value = "";
     });
   }
 
