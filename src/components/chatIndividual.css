@@ -57,8 +57,8 @@
   height: 30px;
 }
 
-.overflow {
-  max-height: 600px;
+.chat__message {
+  height: 400px;
   overflow-y: scroll;
   flex: 1;
   padding: 10px;
@@ -102,10 +102,11 @@
 }
 
 .chat__input {
+  max-height: 70px;
   display: flex;
   padding: 10px;
   margin: 20px;
-  border-radius: 40px;
+  border-radius: 80px;
   background: white;
   border: 1px solid var(--clr-primary-dark);
 }
